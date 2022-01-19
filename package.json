@@ -32,7 +32,7 @@
     "web3-eth-contract": "^1.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "server -s build start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
