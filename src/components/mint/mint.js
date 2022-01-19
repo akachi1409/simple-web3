@@ -76,6 +76,7 @@ function Mint(){
     // console.log(data.totalSupply/data.maxSupply*100)
     return (
         <div className='mint-control' id='mint'>
+            <div className='mint-overlay'></div>
             <div className='mint-background'>
                 <Container>
                     <Row>

@@ -11,9 +11,22 @@
 }
 .mint-control .mint-background{
     padding-top: 8em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.mint-overlay{
     background-color: black;
     opacity: 0.8;
     height: 100vh;
+    position:absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
 }
 
 .mint-description {
@@ -24,7 +37,8 @@
     text-align: center;
 }
 .mint-description .mint-logo-image{
-    opacity:0.5
+    opacity:1;
+    padding-bottom: 3em;
 }
 .mint-description .mint-progress{
     margin-bottom: 5em;
