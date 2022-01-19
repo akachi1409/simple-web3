@@ -82,7 +82,13 @@ function Mint(){
                             <p>
                                 CONNECT YOUR WALLET AND PAY GAS TO CLAIM
                             </p>
-                            <ProgressBar  variant="success" now={data.totalSupply/data.maxSupply*100}  symbol={data.totalSupply/data.maxSupply*100} className='mint-progress'/>
+                            {
+                                data.maxSupply===0 ?
+                                <ProgressBar  variant="success" now={0}  symbol={0} className='mint-progress'/>
+                                :
+                                <ProgressBar  variant="success" now={data.totalSupply/data.maxSupply*100}  symbol={data.totalSupply/data.maxSupply*100} className='mint-progress'/>
+                            }
+                            
                             <div className='number-control'>
                                 <BsFileMinusFill color='white' size={40} onClick = {()=> minus_num()}/>
                                 <span id = "inputBox">{mintNum}</span>
