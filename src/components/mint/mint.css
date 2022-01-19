@@ -23,6 +23,9 @@
     justify-content: center;
     text-align: center;
 }
+.mint-description .mint-logo-image{
+    opacity:0.5
+}
 .mint-description .mint-progress{
     margin-bottom: 5em;
     width: 100%;
