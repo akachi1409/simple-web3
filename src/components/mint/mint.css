@@ -8,6 +8,7 @@
     background-image: url(../../assets/previewbapc.png);
     background-color: #54595F;
     background-size: cover;
+    font-family: MyFont;
 }
 .mint-control .mint-background{
     padding-top: 8em;

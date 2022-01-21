@@ -126,17 +126,17 @@ table {
   border-spacing: 0;
 }
 
-@font-face {
+/* @font-face {
   font-family: "coder";
   font-weight: bold;
   src: local("coder"),
     url(../styles/RobotoCondensed-Bold.ttf);
-}
+} */
 
 body {
   margin: 0;
-  font-family: "coder", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  /* font-family: "coder", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif; */
   /* font-size: 40; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
