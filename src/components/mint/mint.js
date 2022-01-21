@@ -76,9 +76,10 @@ function Mint(){
     // console.log(data.totalSupply/data.maxSupply*100)
     return (
         <div className='mint-control' id='mint'>
-            <div className='mint-overlay'></div>
+            
             <div className='mint-background'>
-                <Container>
+            <div className='mint-overlay'></div>
+                <div id="container">
                     <Row>
                         <Col md={12} xs={12} className='mint-description'>
                             
@@ -126,7 +127,7 @@ function Mint(){
                         }
                         </Col>
                     </Row>
-                </Container>
+                </div>
             </div>
         </div>
     );

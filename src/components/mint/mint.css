@@ -4,30 +4,28 @@
 }
 
 .mint-control {
-    height: 100vh;
     background-image: url(../../assets/previewbapc.png);
     background-color: #54595F;
     background-size: cover;
     font-family: MyFont;
 }
-.mint-control .mint-background{
-    padding-top: 8em;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+#container {
+    padding: 4em;
+    position: relative;
+}
+.mint-background {
+    position: relative;
+    height: 100vh;
 }
 .mint-overlay{
+    
     background-color: black;
     opacity: 0.8;
-    height: 100vh;
     position:absolute;
     left: 0;
     top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .mint-description {
@@ -38,25 +36,18 @@
     text-align: center;
 }
 .mint-description .mint-logo-image{
-    opacity:1;
-    padding-bottom: 3em;
-}
-@media  (max-width: 600px) {
-    .mint-description .mint-logo-image{
-        width:320px;
-        height:210px;
-    }
+    width: 80%;
 }
 .mint-description .mint-progress{
     margin-bottom: 5em;
     width: 100%;
 }
 .mint-description header {
-    font-size: 50px;
+    font-size: 5vw;
     color: white;
     font-weight: 900;
     font-style: italic;
-    line-height: 50px;
+    line-height: 90px;
 }
 
 .mint-description header span {
