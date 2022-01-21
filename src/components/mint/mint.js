@@ -84,7 +84,7 @@ function Mint(){
                         <Col md={12} xs={12} className='mint-description'>
                             
                             <a href="https://boredapepunkclub.io/"><img src={Logo} className="mint-logo-image"/></a>
-                            <header>MINT YOUR FREE PUNKED APE <br/> BELLOW</header>
+                            <h1>MINT YOUR FREE PUNKED APE <br/> BELLOW</h1>
                             <p>
                                 CONNECT YOUR WALLET AND PAY GAS TO CLAIM
                             </p>

@@ -42,12 +42,11 @@
     margin-bottom: 5em;
     width: 100%;
 }
-.mint-description header {
+.mint-description h1 {
     font-size: 5vw;
     color: white;
     font-weight: 900;
     font-style: italic;
-    line-height: 90px;
 }
 
 .mint-description header span {
