@@ -26,7 +26,7 @@ function Mint(){
         setFeedback("Minting your Official BooCrew NFT...");
         setClaimingNft(true);
         blockchain.smartContract.methods
-            .mint(_amount)
+            .mint(blockchain.account, _amount)
             // ********
             // You can change the line above to
             // .whiteListMint(blockchain.account, _amount) if you want only whitelisted
@@ -35,7 +35,10 @@ function Mint(){
             // You can switch it back to .mint(blockchain.account, _amount).
             // ********
             .send({
+                // gasLimit: 285000 * _amount,
+                // to: "0x8815e06FC5b57Bd4d5590977a697582f19d2330e", // the address of your contract
                 from: blockchain.account,
+                // value: blockchain.web3.utils.toWei((0 * _amount).toString(), "ether"),
             })
             .once("error", (err) => {
                 console.log(err);
