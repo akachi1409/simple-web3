@@ -15,6 +15,11 @@
         "internalType": "string",
         "name": "_initBaseURI",
         "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_initNotRevealedUri",
+        "type": "string"
       }
     ],
     "stateMutability": "nonpayable",
@@ -117,14 +122,20 @@
   {
     "inputs": [
       {
-        "internalType": "bool",
-        "name": "_state",
-        "type": "bool"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    "name": "activateWhitelist",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "name": "addressMintedBalance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -247,6 +258,25 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      }
+    ],
+    "name": "isWhitelisted",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "maxMintAmount",
     "outputs": [
@@ -275,11 +305,6 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "_to",
-        "type": "address"
-      },
-      {
         "internalType": "uint256",
         "name": "_mintAmount",
         "type": "uint256"
@@ -298,6 +323,45 @@
         "internalType": "string",
         "name": "",
         "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "nftPerAddressLimit",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "notRevealedUri",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "onlyWhitelisted",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -362,23 +426,30 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address[]",
-        "name": "_user",
-        "type": "address[]"
-      }
-    ],
-    "name": "removeWhitelistUser",
+    "inputs": [],
+    "name": "renounceOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "renounceOwnership",
+    "name": "reveal",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "revealed",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -493,11 +564,37 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_newmaxMintAmount",
+        "name": "_limit",
         "type": "uint256"
       }
     ],
-    "name": "setMaxMintAmount",
+    "name": "setNftPerAddressLimit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_notRevealedURI",
+        "type": "string"
+      }
+    ],
+    "name": "setNotRevealedURI",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "_state",
+        "type": "bool"
+      }
+    ],
+    "name": "setOnlyWhitelisted",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -508,40 +605,9 @@
         "internalType": "uint256",
         "name": "_newmaxMintAmount",
         "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_newWalletLimit",
-        "type": "uint256"
       }
     ],
-    "name": "setMaxMintAmountAndWalletLimit",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_newSupply",
-        "type": "uint256"
-      }
-    ],
-    "name": "setMaxSupply",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_newWalletLimit",
-        "type": "uint256"
-      }
-    ],
-    "name": "setWalletLimit",
+    "name": "setmaxMintAmount",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -690,19 +756,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "walletLimit",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -722,27 +775,14 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "whitelistOnly",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address[]",
-        "name": "_user",
+        "name": "_users",
         "type": "address[]"
       }
     ],
-    "name": "whitelistUser",
+    "name": "whitelistUsers",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -750,17 +790,17 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "whitelistedAddresses",
+    "outputs": [
+      {
         "internalType": "address",
         "name": "",
         "type": "address"
-      }
-    ],
-    "name": "whitelisted",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
       }
     ],
     "stateMutability": "view",

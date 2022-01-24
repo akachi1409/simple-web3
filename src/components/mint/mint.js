@@ -20,13 +20,14 @@ function Mint(){
     const [mintNum, setMintNum] = useState(0)
     const claimNFTs = (_amount) => {
         _amount = document.getElementById("inputBox").textContent;
+        console.log("---", _amount)
         if (_amount <= 0) {
             return;
         }
         setFeedback("Minting your Official BooCrew NFT...");
         setClaimingNft(true);
         blockchain.smartContract.methods
-            .mint(blockchain.account, _amount)
+            .mint( _amount)
             // ********
             // You can change the line above to
             // .whiteListMint(blockchain.account, _amount) if you want only whitelisted
@@ -38,7 +39,7 @@ function Mint(){
                 // gasLimit: 285000 * _amount,
                 // to: "0x8815e06FC5b57Bd4d5590977a697582f19d2330e", // the address of your contract
                 from: blockchain.account,
-                value: blockchain.web3.utils.toWei((0 * _amount).toString(), "ether"),
+                // value: blockchain.web3.utils.toWei((0 * _amount).toString(), "ether"),
             })
             .once("error", (err) => {
                 console.log(err);
