@@ -39,7 +39,7 @@ function Mint(){
                 // gasLimit: 285000 * _amount,
                 // to: "0x8815e06FC5b57Bd4d5590977a697582f19d2330e", // the address of your contract
                 from: blockchain.account,
-                // value: blockchain.web3.utils.toWei((0 * _amount).toString(), "ether"),
+                value: blockchain.web3.utils.toWei((0.02 * _amount).toString(), "ether"),
             })
             .once("error", (err) => {
                 console.log(err);
